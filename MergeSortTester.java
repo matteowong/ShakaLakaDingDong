@@ -8,7 +8,7 @@
 
   BIG-OH CLASSIFICATION OF ALGORITHM: O(nlogn)
   Merge() is O(n) because it creates a new array the size of the two given arrays added together, which means it increases linearly with the size of the inputs
-Sort(), then, is O(n*logn) because you have to split the array logn times (since you are dividing by two), then bring it back together logn times. However, putting the array back together requires merging, which is O(n), so you multiply and get logn+n*logn, which is really just n*logn
+  Sort(), then, is O(n*logn) because you have to split the array logn times (since you are dividing by two), then bring it back together logn times. However, putting the array back together requires merging, which is O(n), so you multiply and get logn+n*logn, which is really just n*logn
 
   Mean execution times for dataset of size n:
   Batch size: <# of times each dataset size was run>
@@ -36,6 +36,7 @@ we will use System.nanoTime()
     ******************************/
     public static void main( String[] args ) 
     {
+
 	int[] a1={1};
 	int[] a10 = new int[10];
 	for (int i=0;i<10;i++){
@@ -45,20 +46,42 @@ we will use System.nanoTime()
 	for (int i=0;i<100;i++){
 	    a100[i]=(int)(Math.random()*370);
 	}
+	System.out.println("Testing MergeSort");
+	int mergeSortLength1=0;
+	for (int count=0;count<1000;count++) {
+
 	long sort1Start =System.nanoTime();
 	MergeSort.sort(a1);
 	long sort1End=System.nanoTime();
-	System.out.println(sort1End - sort1Start);
+	mergeSortLength1+=(sort1End - sort1Start);
+	}
+	mergeSortLength1/=1000;
+	System.out.println(mergeSortLength1);
 
+	System.out.println("mergeSort length 10");
+	int mergeSortLength10=0;
+	for (int count=0;count<1000;count++) {
 	long sort2Start =System.nanoTime();
 	MergeSort.sort(a10);
 	long sort2End=System.nanoTime();
-	System.out.println(sort2End - sort2Start);
+	mergeSortLength10+=(sort2End - sort2Start);
+	}
+	mergeSortLength10/=1000;
+	System.out.println(mergeSortLength10);
 
+
+	System.out.println("Array of length 100");
+	mergeSortLength100=0;
+	for (int count=0;count<1000;count++) {
 	long sort3Start =System.nanoTime();
 	MergeSort.sort(a100);
 	long sort3End=System.nanoTime();
-	System.out.println(sort3End - sort3Start + "\n");
+	MergeSortLength100+=(sort3End - sort3Start);
+	}
+	mergeSortLength100/=1000;
+	System.out.println(mergeSortLength100);
+
+
 
 	ArrayList b1= new ArrayList();
 	ArrayList b10 = new ArrayList();
@@ -70,21 +93,23 @@ we will use System.nanoTime()
 	    b100.add((int)(Math.random()*370));
 	}
 
+	System.out.println("Comparing to bubbleSort");
+	System.out.println("Array of length 1");
 	long bubbleSort1Start =System.nanoTime();
 	BubbleSort.bubbleSortV(b1);
 	long bubbleSort1End=System.nanoTime();
 	System.out.println(bubbleSort1End - bubbleSort1Start);
-	
+	System.out.println("Array of length 10");	
 	long bubbleSort2Start =System.nanoTime();
 	BubbleSort.bubbleSortV(b10);
 	long bubbleSort2End=System.nanoTime();
 	System.out.println(bubbleSort2End - bubbleSort2Start);
-	
+	System.out.println("Array of length 100");	
 	long bubbleSort3Start =System.nanoTime();
 	BubbleSort.bubbleSortV(b100);
 	long bubbleSort3End=System.nanoTime();
-	System.out.println(bubbleSort3End - bubbleSort3Start);
-
+	System.out.println(bubbleSort3End - bubbleSort3Start +"\n");
+	
     }//end main
 
 }//end class

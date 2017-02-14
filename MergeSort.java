@@ -57,7 +57,10 @@ public class MergeSort {
      ******************************************************/
     public static int[] sort( int[] arr ) 
     {
-	if (arr.length>1)
+	if (arr.length==1) {
+	    return arr;
+	}
+	else 
 	    {
 		int[] firstHalf=new int[arr.length/2];
 		int[] secondHalf=new int[arr.length-arr.length/2];//checks against list being odd
@@ -67,7 +70,7 @@ public class MergeSort {
 		    secondHalf[i-arr.length/2]=arr[i];
 		return merge(sort(firstHalf),sort(secondHalf));
 	    }
-	return arr;
+
     }//end sort()
 
 
