@@ -69,17 +69,17 @@ we will use System.nanoTime()
 	}
 
 	long bubbleSort1Start =System.nanoTime();
-	MergeSort.bubbleSortV(b1);
+	BubbleSort.bubbleSortV(b1);
 	long bubbleSort1End=System.nanoTime();
 	System.out.println(bubbleSort1End - bubbleSort1Start);
 	
 	long bubbleSort2Start =System.nanoTime();
-	MergeSort.bubbleSortV(b10);
+	BubbleSort.bubbleSortV(b10);
 	long bubbleSort2End=System.nanoTime();
 	System.out.println(bubbleSort2End - bubbleSort2Start);
 	
 	long bubbleSort3Start =System.nanoTime();
-	MergeSort.bubbleSortV(b100);
+	BubbleSort.bubbleSortV(b100);
 	long bubbleSort3End=System.nanoTime();
 	System.out.println(bubbleSort3End - bubbleSort3Start);
 
