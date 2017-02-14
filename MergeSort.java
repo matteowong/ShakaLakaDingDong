@@ -70,6 +70,23 @@ public class MergeSort {
 	return arr;
     }//end sort()
 
+    //bubble sort
+    public static void bubbleSortV( int[]  data ) 
+    {
+	for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
+            System.out.println( "commencing pass #" + passCtr + "..." );
+	    
+            //iterate thru first to next-to-last element, comparing to next
+            for( int i = 0; i < data.size()-1; i++ ) {
+		
+                //if element at i > element at i+1, swap
+                if ( data.get(i).compareTo(data.get(i+1) ) > 0 ) 
+                    data.set( i, data.set(i+1,data.get(i)) );   
+                
+                System.out.println(data); //diag: show current state of list
+            }
+        }
+    }//end bubbleSortV
 
 
     //-------------------HELPERS-------------------------
@@ -87,6 +104,8 @@ public class MergeSort {
 	    System.out.print( i + ",");
 	System.out.println("]");
     }
+
+
     //---------------------------------------------------
 
 
