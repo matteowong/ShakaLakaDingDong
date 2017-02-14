@@ -46,8 +46,11 @@ we will use System.nanoTime()
 	for (int i=0;i<100;i++){
 	    a100[i]=(int)(Math.random()*370);
 	}
-	//System.out.println("Testing MergeSort");
-	//System.out.println("Array length 1");
+	int[] a1000=new int[1000];
+	for (int i=0;i<1000;i++) {
+	    a1000[i]=(int)(Math.random()*37000);
+	}
+
 	int mergeSortLength1=0;
 	for (int count=0;count<10000;count++) {
 	    long sort1Start =System.nanoTime();
@@ -57,9 +60,7 @@ we will use System.nanoTime()
 	    MergeSort.mess(a1);
 	}
 	mergeSortLength1/=10000;
-	//System.out.println(mergeSortLength1);
 
-	//System.out.println("mergeSort length 10");
 	
 	int mergeSortLength10=0;
 	
@@ -71,10 +72,8 @@ we will use System.nanoTime()
 	    MergeSort.mess(a10);
 	}
 	mergeSortLength10/=10000;
-	//System.out.println(mergeSortLength10);
 
-
-	//System.out.println("Array of length 100");
+	
 	int mergeSortLength100=0;
 
 	for (int count=0;count<10000;count++) {
@@ -85,12 +84,19 @@ we will use System.nanoTime()
 	    MergeSort.mess(a100);
 	}
 	mergeSortLength100/=10000;
-	//System.out.println(mergeSortLength100+"\n");
 
+	int mergeSortLength1000=0;
+
+	for (int count=0;count<10000;count++) {
+	    long sort3Start =System.nanoTime();
+	    MergeSort.sort(a1000);
+	    long sort3End=System.nanoTime();
+	    mergeSortLength1000+=(sort3End - sort3Start);
+	    MergeSort.mess(a1000);
+	}
+	mergeSortLength1000/=10000;	
 
 	
-	//System.out.println("Comparing to bubbleSort\n");
-	//System.out.println("Array of length 1");
 
 	int bubbleSortLength1=0;
 	for (int count=0;count<10000;count++) {
@@ -101,9 +107,7 @@ we will use System.nanoTime()
 	    MergeSort.mess(a1);
 	}
 	bubbleSortLength1/=10000;
-	//System.out.println(bubbleSortLength1);
-	
-	//System.out.println("Array of length 10");
+
 
 	int bubbleSortLength10=0;
 
@@ -115,10 +119,7 @@ we will use System.nanoTime()
 	    MergeSort.mess(a10);
 	}
 	bubbleSortLength10/=10000;
-	//System.out.println(bubbleSortLength10);
 
-	
-	//System.out.println("Array of length 100");
 
 	int bubbleSortLength100=0;
 	for (int count=0;count<10000;count++) {
@@ -129,13 +130,26 @@ we will use System.nanoTime()
 	    MergeSort.mess(a100);
 	}
 	bubbleSortLength100/=10000;
-	//System.out.println(bubbleSortLength100);
+
+
+	int bubbleSortLength1000=0;
+	for (int count=0;count<10000;count++) {
+	    long bubbleSort3Start =System.nanoTime();
+	    BubbleSort.bubbleSort(a1000);
+	    long bubbleSort3End=System.nanoTime();
+	    bubbleSortLength1000+=(bubbleSort3End - bubbleSort3Start);
+	    MergeSort.mess(a1000);
+	}
+	bubbleSortLength1000/=10000;
+
 	System.out.println("Array of length 1");
 	System.out.println("Merge sort: "+mergeSortLength1+" Bubble Sort: "+bubbleSortLength1);
 	System.out.println("Array of length 10");
 	System.out.println("Merge sort: "+mergeSortLength10+" Bubble Sort: "+bubbleSortLength10);
 	System.out.println("Array of length 100");
 	System.out.println("Merge sort: "+mergeSortLength100+" Bubble Sort: "+bubbleSortLength100);
+	System.out.println("Array of length 1000");
+	System.out.println("Merge sort: "+mergeSortLength1000+" Bubble Sort: "+bubbleSortLength1000);	
     }//end main
 
 }//end class
