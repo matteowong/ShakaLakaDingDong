@@ -22,6 +22,8 @@ Sort(), then, is O(n*logn) because you have to split the array logn times (since
   <INSERT YOUR RESULTS ANALYSIS HERE>
   ======================================*/
 
+import java.util.ArrayList;
+
 public class MergeSortTester 
 {
 
@@ -56,7 +58,7 @@ we will use System.nanoTime()
 	long sort3Start =System.nanoTime();
 	MergeSort.sort(a100);
 	long sort3End=System.nanoTime();
-	System.out.println(sort3End - sort3Start);
+	System.out.println(sort3End - sort3Start + "\n");
 
 	ArrayList b1= new ArrayList();
 	ArrayList b10 = new ArrayList();

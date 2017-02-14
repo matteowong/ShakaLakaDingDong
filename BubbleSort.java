@@ -58,7 +58,7 @@ public class BubbleSort
     public static void bubbleSortV( ArrayList<Comparable> data ) 
     {
 	for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
-            System.out.println( "commencing pass #" + passCtr + "..." );
+            
 
             //iterate thru first to next-to-last element, comparing to next
             for( int i = 0; i < data.size()-1; i++ ) {
@@ -67,7 +67,7 @@ public class BubbleSort
                 if ( data.get(i).compareTo(data.get(i+1) ) > 0 ) 
                     data.set( i, data.set(i+1,data.get(i)) );   
                 
-                System.out.println(data); //diag: show current state of list
+                
             }
         }
     }//end bubbleSortV
