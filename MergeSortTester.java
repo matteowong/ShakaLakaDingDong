@@ -58,18 +58,28 @@ we will use System.nanoTime()
 	long sort3End=System.nanoTime();
 	System.out.println(sort3End - sort3Start);
 
+	ArrayList b1= new ArrayList();
+	ArrayList b10 = new ArrayList();
+	for (int i=0;i<10;i++){
+	    b10.add((int)(Math.random()*37));
+	}
+        ArrayList b100=new ArrayList();
+	for (int i=0;i<100;i++){
+	    b100.add((int)(Math.random()*370));
+	}
+
 	long bubbleSort1Start =System.nanoTime();
-	MergeSort.bubbleSortV(a1);
+	MergeSort.bubbleSortV(b1);
 	long bubbleSort1End=System.nanoTime();
 	System.out.println(bubbleSort1End - bubbleSort1Start);
 	
 	long bubbleSort2Start =System.nanoTime();
-	MergeSort.bubbleSortV(a10);
+	MergeSort.bubbleSortV(b10);
 	long bubbleSort2End=System.nanoTime();
 	System.out.println(bubbleSort2End - bubbleSort2Start);
 	
 	long bubbleSort3Start =System.nanoTime();
-	MergeSort.bubbleSortV(a100);
+	MergeSort.bubbleSortV(b100);
 	long bubbleSort3End=System.nanoTime();
 	System.out.println(bubbleSort3End - bubbleSort3Start);
 
