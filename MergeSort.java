@@ -1,4 +1,5 @@
-//Matteo Wong
+//Matteo Wong, Yuqi Wu, Fabiola Radosav
+//Team ShakaLakaDingDong
 //APCS2 pd3
 //HW06 -- Step 1: Split, Step 2: ?, Step 3: Sorted!
 //2017-02-10

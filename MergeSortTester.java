@@ -2,10 +2,13 @@
   class MergeSortTester
 
   ALGORITHM:
-  <INSERT YOUR DISTILLATION OF ALGO HERE>
+  1. check list being passed to you. If length is 1, return it
+  2. if length is not one, split it in two and pass it on recursively 
+  3. when lists are received from lower computers, sort with mergeSort 
 
-  BIG-OH CLASSIFICATION OF ALGORITHM:
-  <INSERT YOUR EXECUTION TIME CATEGORIZATION OF MERGESORT HERE>
+  BIG-OH CLASSIFICATION OF ALGORITHM: O(nlogn)
+  Merge() is O(n) because it creates a new array the size of the two given arrays added together, which means it increases linearly with the size of the inputs
+Sort(), then, is O(n*logn) because you have to split the array logn times (since you are dividing by two), then bring it back together logn times. However, putting the array back together requires merging, which is O(n), so you multiply and get logn+n*logn, which is really just n*logn
 
   Mean execution times for dataset of size n:
   Batch size: <# of times each dataset size was run>
@@ -27,7 +30,7 @@ public class MergeSortTester
      * <INSERT YOUR DESCRIPTION HERE OF 
      *  YOUR APPARATUS FOR GENERATING EXECUTION 
      *  TIME DATA...>
-we will use System.currentTimeMillis()
+we will use System.nanoTime()
     ******************************/
     public static void main( String[] args ) 
     {
