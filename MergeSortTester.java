@@ -28,7 +28,7 @@ public class MergeSortTester
      *  YOUR APPARATUS FOR GENERATING EXECUTION 
      *  TIME DATA...>
 we will use System.currentTimeMillis()
-     ******************************/
+    ******************************/
     public static void main( String[] args ) 
     {
 	int[] a1={1};
@@ -40,11 +40,20 @@ we will use System.currentTimeMillis()
 	for (int i=0;i<100;i++){
 	    a100[i]=(int)(Math.random()*370);
 	}
-	long sort1Start=System.currentTimeMillis();
+	long sort1Start =System.nanoTime();
 	MergeSort.sort(a1);
-	long sort1End=System.currentTimeMillis();
-	System.out.println(sort1End
-	//System.currentTimeMillis()
+	long sort1End=System.nanoTime();
+	System.out.println(sort1End - sort1Start);
+
+	long sort2Start =System.nanoTime();
+	MergeSort.sort(a10);
+	long sort2End=System.nanoTime();
+	System.out.println(sort2End - sort2Start);
+
+	long sort3Start =System.nanoTime();
+	MergeSort.sort(a100);
+	long sort3End=System.nanoTime();
+	System.out.println(sort3End - sort3Start);
     }//end main
 
 }//end class
