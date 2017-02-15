@@ -11,13 +11,13 @@
   Sort(), then, is O(n*logn) because you have to split the array logn times (since you are dividing by two), then bring it back together logn times. However, putting the array back together requires merging, which is O(n), so you multiply and get logn+n*logn, which is really just n*logn
 
   Mean execution times for dataset of size n:
-  Batch size: <# of times each dataset size was run>
-  n=1       time: 
-  n=10      time: 
-  n=100     time: 
+  Batch size: 1000
+  n=1       time: 201
+  n=10      time: 1506
+  n=100     time: 10846
   ...
-  n=<huge>  time: 
-
+  n=1000    time: 124702
+  
   ANALYSIS:
   <INSERT YOUR RESULTS ANALYSIS HERE>
   ======================================*/
@@ -50,7 +50,7 @@ we will use System.nanoTime()
 	for (int i=0;i<1000;i++) {
 	    a1000[i]=(int)(Math.random()*37000);
 	}
-
+	
 	int mergeSortLength1=0;
 	for (int count=0;count<10000;count++) {
 	    long sort1Start =System.nanoTime();
@@ -95,8 +95,6 @@ we will use System.nanoTime()
 	    MergeSort.mess(a1000);
 	}
 	mergeSortLength1000/=10000;	
-
-	
 
 	int bubbleSortLength1=0;
 	for (int count=0;count<10000;count++) {
@@ -149,7 +147,8 @@ we will use System.nanoTime()
 	System.out.println("Array of length 100");
 	System.out.println("Merge sort: "+mergeSortLength100+" Bubble Sort: "+bubbleSortLength100);
 	System.out.println("Array of length 1000");
-	System.out.println("Merge sort: "+mergeSortLength1000+" Bubble Sort: "+bubbleSortLength1000);	
+	System.out.println("Merge sort: "+mergeSortLength1000+" Bubble Sort: "+bubbleSortLength1000);
+
     }//end main
 
 }//end class
