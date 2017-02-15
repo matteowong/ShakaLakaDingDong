@@ -11,15 +11,20 @@
   Sort(), then, is O(n*logn) because you have to split the array logn times (since you are dividing by two), then bring it back together logn times. However, putting the array back together requires merging, which is O(n), so you multiply and get logn+n*logn, which is really just n*logn
 
   Mean execution times for dataset of size n:
-  Batch size: 1000
-  n=1       time: 201
-  n=10      time: 1506
-  n=100     time: 10846
-  ...
-  n=1000    time: 124702
+  Batch size: 10000
+  n=1	     time: 97
+  n=10	     time: 773
+  n=30	     time: 2528
+  n=50	     time: 3085
+  n=70	     time: 4559
+  n=100	     time: 7491
+  n=300	     time: 22413
+  n=500	     time: 39158
+  n=700	     time: 54274
+  n=1000     time: 74723
   
   ANALYSIS:
-  <INSERT YOUR RESULTS ANALYSIS HERE>
+  The data is slightly inconclusive. It graphs as either n or nlogn, since nlogn is a quadratic with a very small slope. However, since our prediction was nlogn, the data could correspond to that.
   ======================================*/
 
 
