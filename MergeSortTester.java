@@ -50,13 +50,9 @@ we will use System.nanoTime()
 	for (int i=0;i<1000;i++) {
 	    a1000[i]=(int)(Math.random()*37000);
 	}
-	int[] a10000=new int[1000];
-	for (int i=0;i<1000;i++) {
+	int[] a10000=new int[10000];
+	for (int i=0;i<10000;i++) {
 	    a10000[i]=(int)(Math.random()*37000);
-	}
-	int[] a100000=new int[1000];
-	for (int i=0;i<1000;i++) {
-	    a100000[i]=(int)(Math.random()*37000);
 	}
 	
 	int mergeSortLength1=0;
@@ -96,37 +92,13 @@ we will use System.nanoTime()
 	int mergeSortLength1000=0;
 
 	for (int count=0;count<10000;count++) {
-	    long sort3Start =System.nanoTime();
+	    long sort4Start =System.nanoTime();
 	    MergeSort.sort(a1000);
-	    long sort3End=System.nanoTime();
-	    mergeSortLength1000+=(sort3End - sort3Start);
+	    long sort4End=System.nanoTime();
+	    mergeSortLength1000+=(sort4End - sort4Start);
 	    MergeSort.mess(a1000);
 	}
 	mergeSortLength1000/=10000;
-
-	int mergeSortLength10000=0;
-	
-	for (int count=0;count<10000;count++) {
-	    long sort3Start =System.nanoTime();
-	    MergeSort.sort(a10000);
-	    long sort3End=System.nanoTime();
-	    mergeSortLength10000+=(sort3End - sort3Start);
-	    MergeSort.mess(a10000);
-	}
-	mergeSortLength10000/=10000;
-
-	int mergeSortLength100000=0;
-	
-	for (int count=0;count<10000;count++) {
-	    long sort3Start =System.nanoTime();
-	    MergeSort.sort(a100000);
-	    long sort3End=System.nanoTime();
-	    mergeSortLength100000+=(sort3End - sort3Start);
-	    MergeSort.mess(a100000);
-	}
-	mergeSortLength100000/=10000;
-
-
 
 	System.out.println("Array of length 1");
 	System.out.println(mergeSortLength1);
@@ -136,10 +108,6 @@ we will use System.nanoTime()
 	System.out.println(mergeSortLength100);
 	System.out.println("Array of length 1000");
 	System.out.println(mergeSortLength1000);
-	System.out.println("Array of length 10000");
-	System.out.println(mergeSortLength10000);
-	System.out.println("Array of length 100000");
-	System.out.println(mergeSortLength100000);
 
     }//end main
 
