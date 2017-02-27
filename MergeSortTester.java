@@ -41,6 +41,9 @@ we will use System.nanoTime()
     ******************************/
     public static void main( String[] args ) 
     {
+	//to boot up JVM
+	int[] pre= {2,4,5,3,7,83,45,11,3,153,90};
+	MergeSort.sort(pre);
 
 	int[] a1={1};
 	int[] a10 = new int[10];
@@ -75,6 +78,8 @@ we will use System.nanoTime()
 	for (int i=0;i<700;i++){
 	    a700[i]=(int)(Math.random()*3700);
 	}
+
+	
 	int[] a1000=new int[1000];
 	for (int i=0;i<1000;i++) {
 	    a1000[i]=(int)(Math.random()*37000);
@@ -180,6 +185,8 @@ we will use System.nanoTime()
 	}
 	mergeSortLength700/=10000;
 
+
+
 	int mergeSortLength1000=0;
 
 	for (int count=0;count<10000;count++) {
@@ -209,7 +216,29 @@ we will use System.nanoTime()
 	System.out.println(mergeSortLength500);
 	System.out.println("Array of length 700");
 	System.out.println(mergeSortLength700);
+
 	System.out.println("Array of length 1000");
+	System.out.println(mergeSortLength1000);
+
+	System.out.println("For copy/pasting");
+	System.out.println(mergeSortLength1);
+
+	System.out.println(mergeSortLength10);
+
+	System.out.println(mergeSortLength30);
+
+	System.out.println(mergeSortLength50);
+
+	System.out.println(mergeSortLength70);
+
+	System.out.println(mergeSortLength100);
+
+	System.out.println(mergeSortLength300);
+
+	System.out.println(mergeSortLength500);
+
+	System.out.println(mergeSortLength700);
+
 	System.out.println(mergeSortLength1000);
 
     }//end main
